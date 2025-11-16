@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router';
+
 import NavBar from '@/components/NavBar.vue';
-import Hero from '@/components/Hero.vue';
 </script>
 
 <template>
   <NavBar />
-  <Hero />
+  <RouterView />
 </template>
 
 <style scoped></style>
