@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed, defineProps, ref, type PropType } from 'vue';
-const { job } = defineProps({
+import { RouterLink } from 'vue-router';
+const { job, showFullDescriptionParam } = defineProps({
     job: {
         type: Object as PropType<{
             id: number;
@@ -10,11 +11,15 @@ const { job } = defineProps({
             salary: string;
             location: string;
         }>,
-        required: true
+        required: true,
+    },
+    showFullDescriptionParam: {
+        type: Boolean,
+        default: false
     }
 });
 
-const showFullDescription = ref(false);
+const showFullDescription = ref(showFullDescriptionParam);
 
 const toggleDescription = () => {
     showFullDescription.value = !showFullDescription.value;
@@ -55,10 +60,10 @@ const truncateDescription = computed(() => {
                         <i class="pi pi-map-marker"></i>
                         {{ job.location }}
                     </div>
-                    <a :href="`/job/${job.id}`"
+                    <RouterLink :to="`/job/${job.id}`"
                         class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm">
                         Read More
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
         </div>

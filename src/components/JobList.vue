@@ -13,6 +13,10 @@ defineProps({
     showAll: {
         type: Boolean,
         default: false
+    },
+    showFullDescription: {
+        type: Boolean,
+        default: false
     }
 });
 </script>
@@ -24,7 +28,8 @@ defineProps({
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Job Listing 1 -->
-                <CardJob v-for="job in (showAll ? jobs : jobs.slice(0, limit))" :key="job.id" :job="job" />
+                <CardJob v-for="job in (showAll ? jobs : jobs.slice(0, limit))" :key="job.id" :job="job"
+                    :show-full-description-param="showFullDescription" />
             </div>
         </div>
     </section>
