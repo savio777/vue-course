@@ -10,4 +10,6 @@
 - install vue-spinner: `npm install vue-spinner`
 - install toast: `npm install vue-toastification@next`
 
-[source video 1:01:52-2:56:44](https://www.youtube.com/watch?v=VeNfHj6MhgA)
+[source video](https://www.youtube.com/watch?v=VeNfHj6MhgA)
+
+<img width="1755" height="988" alt="image" src="https://github.com/user-attachments/assets/a57d6a0a-67b3-458f-9071-e5fddf36a728" />
