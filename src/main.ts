@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
+import 'primeicons/primeicons.css'
+
 import App from './App.vue'
 import router from './router'
 import './main.css'
