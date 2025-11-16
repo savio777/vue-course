@@ -6,7 +6,7 @@ import logo from '@/assets/logo.png';
 
 const router = useRouter();
 
-const screensBlacklist = ['NotFound', 'JobDetails'];
+const screensBlacklist = ['NotFound', 'JobDetails', 'Edit Job'];
 
 const screens = computed(() =>
     router.getRoutes()

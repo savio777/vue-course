@@ -34,6 +34,10 @@ export const fetchCreateJob = (param: Omit<IJobs, 'id'>): Promise<{ data: IJobs 
   return axiosInstance.post('/jobs', param)
 }
 
+export const fetchEditJob = (id: string, param: Omit<IJobs, 'id'>): Promise<{ data: IJobs }> => {
+  return axiosInstance.put(`/jobs/${id}`, param)
+}
+
 export const fetchDeleteJobsById = (id: number | string): Promise<{ data: IJobs }> => {
   return axiosInstance.delete(`/jobs/${id}`)
 }
