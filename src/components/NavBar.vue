@@ -6,12 +6,16 @@ import logo from '@/assets/logo.png';
 
 const router = useRouter();
 
+const screensBlacklist = ['NotFound', 'JobDetails'];
+
 const screens = computed(() =>
-    router.getRoutes().map(r => ({
-        name: (r.name ?? r.path) as string,
-        path: r.path,
-        focused: router.currentRoute.value.path === r.path
-    }))
+    router.getRoutes()
+        .filter(r => !screensBlacklist.includes(r.name as string))
+        .map(r => ({
+            name: (r.name ?? r.path) as string,
+            path: r.path,
+            focused: router.currentRoute.value.path === r.path
+        }))
 );
 </script>
 
@@ -27,10 +31,11 @@ const screens = computed(() =>
                     </RouterLink>
                     <div class="md:ml-auto">
                         <div class="flex space-x-2">
-                            <RouterLink v-for="screen in screens" :key="screen.name" :to="screen.path"
-                                :class="screen.focused ? 'text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' : 'text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2'">
-                                {{
-                                    screen.name }}</RouterLink>
+                            <RouterLink v-for="screen in screens" :key="screen.name" :to="screen.path" :class="screen.focused ?
+                                'text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' :
+                                'text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2'">
+                                {{ screen.name }}
+                            </RouterLink>
                         </div>
                     </div>
                 </div>
