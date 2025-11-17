@@ -1,9 +1,16 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    video: true,
+    videosFolder: 'cypress/videos',
+    screenshotOnRunFailure: true,
+    videoCompression: 15,
+    trashAssetsBeforeRuns: true,
   },
-});
+  video: true,
+  videosFolder: 'cypress/videos',
+  screenshotOnRunFailure: true,
+  videoCompression: 15,
+  trashAssetsBeforeRuns: true,
+})
